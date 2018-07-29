@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4DC7034210DF1EE00695117 /* StyleProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7030210DF1EE00695117 /* StyleProcotol.swift */; };
+		D4DC7035210DF1EE00695117 /* StyleHandlingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7031210DF1EE00695117 /* StyleHandlingObject.swift */; };
+		D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */; };
+		D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7033210DF1EE00695117 /* Responder+Style.swift */; };
 		D4E728EE210DEA8F002C3578 /* SwiftStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E728E4210DEA8F002C3578 /* SwiftStyle.framework */; };
 		D4E728F3210DEA8F002C3578 /* SwiftStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E728F2210DEA8F002C3578 /* SwiftStyleTests.swift */; };
 		D4E728F5210DEA8F002C3578 /* SwiftStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = D4E728E7210DEA8F002C3578 /* SwiftStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,12 +27,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4DC7030210DF1EE00695117 /* StyleProcotol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleProcotol.swift; sourceTree = "<group>"; };
+		D4DC7031210DF1EE00695117 /* StyleHandlingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleHandlingObject.swift; sourceTree = "<group>"; };
+		D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNeutralTypes.swift; sourceTree = "<group>"; };
+		D4DC7033210DF1EE00695117 /* Responder+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Responder+Style.swift"; sourceTree = "<group>"; };
 		D4E728E4210DEA8F002C3578 /* SwiftStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E728E7210DEA8F002C3578 /* SwiftStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftStyle.h; sourceTree = "<group>"; };
 		D4E728E8210DEA8F002C3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E728ED210DEA8F002C3578 /* SwiftStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E728F2210DEA8F002C3578 /* SwiftStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStyleTests.swift; sourceTree = "<group>"; };
 		D4E728F4210DEA8F002C3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E728FF210DEABD002C3578 /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		D4E72900210DEABD002C3578 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
+		D4E72901210DEABD002C3578 /* ProjectCommon.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProjectCommon.xcconfig; sourceTree = "<group>"; };
+		D4E72902210DEABD002C3578 /* TargetCommon.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TargetCommon.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +65,9 @@
 		D4E728DA210DEA8F002C3578 = {
 			isa = PBXGroup;
 			children = (
-				D4E728E6210DEA8F002C3578 /* SwiftStyle */,
-				D4E728F1210DEA8F002C3578 /* SwiftStyleTests */,
+				D4E728FE210DEA94002C3578 /* Configs */,
+				D4E728E6210DEA8F002C3578 /* Sources */,
+				D4E728F1210DEA8F002C3578 /* Tests */,
 				D4E728E5210DEA8F002C3578 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +81,37 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D4E728E6210DEA8F002C3578 /* SwiftStyle */ = {
+		D4E728E6210DEA8F002C3578 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D4E728E7210DEA8F002C3578 /* SwiftStyle.h */,
 				D4E728E8210DEA8F002C3578 /* Info.plist */,
+				D4E728E7210DEA8F002C3578 /* SwiftStyle.h */,
+				D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */,
+				D4DC7033210DF1EE00695117 /* Responder+Style.swift */,
+				D4DC7031210DF1EE00695117 /* StyleHandlingObject.swift */,
+				D4DC7030210DF1EE00695117 /* StyleProcotol.swift */,
 			);
-			path = SwiftStyle;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		D4E728F1210DEA8F002C3578 /* SwiftStyleTests */ = {
+		D4E728F1210DEA8F002C3578 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D4E728F2210DEA8F002C3578 /* SwiftStyleTests.swift */,
 				D4E728F4210DEA8F002C3578 /* Info.plist */,
+				D4E728F2210DEA8F002C3578 /* SwiftStyleTests.swift */,
 			);
-			path = SwiftStyleTests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D4E728FE210DEA94002C3578 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				D4E72901210DEABD002C3578 /* ProjectCommon.xcconfig */,
+				D4E72902210DEABD002C3578 /* TargetCommon.xcconfig */,
+				D4E72900210DEABD002C3578 /* Framework.xcconfig */,
+				D4E728FF210DEABD002C3578 /* Test.xcconfig */,
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +176,7 @@
 				TargetAttributes = {
 					D4E728E3210DEA8F002C3578 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					D4E728EC210DEA8F002C3578 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -194,6 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DC7034210DF1EE00695117 /* StyleProcotol.swift in Sources */,
+				D4DC7035210DF1EE00695117 /* StyleHandlingObject.swift in Sources */,
+				D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */,
+				D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +251,7 @@
 /* Begin XCBuildConfiguration section */
 		D4E728F6210DEA8F002C3578 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E72901210DEABD002C3578 /* ProjectCommon.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -268,7 +302,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -281,6 +314,7 @@
 		};
 		D4E728F7210DEA8F002C3578 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E72901210DEABD002C3578 /* ProjectCommon.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -325,7 +359,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -338,15 +371,14 @@
 		};
 		D4E728F9210DEA8F002C3578 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E72900210DEABD002C3578 /* Framework.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftStyle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -356,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyle;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,15 +396,14 @@
 		};
 		D4E728FA210DEA8F002C3578 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E72900210DEABD002C3578 /* Framework.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftStyle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,15 +420,10 @@
 		};
 		D4E728FC210DEA8F002C3578 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E728FF210DEABD002C3578 /* Test.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
-				INFOPLIST_FILE = SwiftStyleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -406,15 +433,10 @@
 		};
 		D4E728FD210DEA8F002C3578 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E728FF210DEABD002C3578 /* Test.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
-				INFOPLIST_FILE = SwiftStyleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
