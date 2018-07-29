@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D4DC7034210DF1EE00695117 /* StyleProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7030210DF1EE00695117 /* StyleProcotol.swift */; };
-		D4DC7035210DF1EE00695117 /* StyleHandlingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7031210DF1EE00695117 /* StyleHandlingObject.swift */; };
 		D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */; };
 		D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7033210DF1EE00695117 /* Responder+Style.swift */; };
+		D4DC705E210E159C00695117 /* StyleBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC705D210E159C00695117 /* StyleBroadcaster.swift */; };
+		D4DC7060210E15B900695117 /* GhostStyleBroadcasterPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */; };
 		D4E728EE210DEA8F002C3578 /* SwiftStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E728E4210DEA8F002C3578 /* SwiftStyle.framework */; };
 		D4E728F3210DEA8F002C3578 /* SwiftStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E728F2210DEA8F002C3578 /* SwiftStyleTests.swift */; };
 		D4E728F5210DEA8F002C3578 /* SwiftStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = D4E728E7210DEA8F002C3578 /* SwiftStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,9 +29,10 @@
 
 /* Begin PBXFileReference section */
 		D4DC7030210DF1EE00695117 /* StyleProcotol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleProcotol.swift; sourceTree = "<group>"; };
-		D4DC7031210DF1EE00695117 /* StyleHandlingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleHandlingObject.swift; sourceTree = "<group>"; };
 		D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNeutralTypes.swift; sourceTree = "<group>"; };
 		D4DC7033210DF1EE00695117 /* Responder+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Responder+Style.swift"; sourceTree = "<group>"; };
+		D4DC705D210E159C00695117 /* StyleBroadcaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleBroadcaster.swift; sourceTree = "<group>"; };
+		D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostStyleBroadcasterPool.swift; sourceTree = "<group>"; };
 		D4E728E4210DEA8F002C3578 /* SwiftStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E728E7210DEA8F002C3578 /* SwiftStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftStyle.h; sourceTree = "<group>"; };
 		D4E728E8210DEA8F002C3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,8 +89,9 @@
 				D4E728E8210DEA8F002C3578 /* Info.plist */,
 				D4E728E7210DEA8F002C3578 /* SwiftStyle.h */,
 				D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */,
+				D4DC705D210E159C00695117 /* StyleBroadcaster.swift */,
+				D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */,
 				D4DC7033210DF1EE00695117 /* Responder+Style.swift */,
-				D4DC7031210DF1EE00695117 /* StyleHandlingObject.swift */,
 				D4DC7030210DF1EE00695117 /* StyleProcotol.swift */,
 			);
 			path = Sources;
@@ -223,8 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DC7060210E15B900695117 /* GhostStyleBroadcasterPool.swift in Sources */,
 				D4DC7034210DF1EE00695117 /* StyleProcotol.swift in Sources */,
-				D4DC7035210DF1EE00695117 /* StyleHandlingObject.swift in Sources */,
+				D4DC705E210E159C00695117 /* StyleBroadcaster.swift in Sources */,
 				D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */,
 				D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */,
 			);
@@ -380,17 +384,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyle;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -405,16 +403,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyle;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -427,7 +419,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -440,7 +431,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zetasq.SwiftStyleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

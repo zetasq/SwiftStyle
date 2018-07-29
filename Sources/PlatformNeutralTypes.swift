@@ -14,18 +14,10 @@ import Foundation
 
   public typealias Responder = NSResponder
 
-  public typealias View = NSView
-
-  public typealias ViewController = NSViewController
-
 #elseif os(iOS)
 
   import UIKit
 
   public typealias Responder = UIResponder
-
-  public typealias View = UIView
-
-  public typealias ViewController = UIViewController
 
 #endif

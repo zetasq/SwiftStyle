@@ -6,6 +6,10 @@
 //  Copyright © 2018 Zhu Shengqi. All rights reserved.
 //
 
+DEVELOPMENT_TEAM = ;
+PROVISIONING_PROFILE_SPECIFIER = ;
+CODE_SIGN_IDENTITY = ;
+
 // Dynamic linking uses different default copy paths
 LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]           = $(inherited) '@executable_path/../Frameworks' '@loader_path/../Frameworks'
 LD_RUNPATH_SEARCH_PATHS[sdk=iphoneos*]         = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
@@ -16,7 +20,12 @@ LD_RUNPATH_SEARCH_PATHS[sdk=appletvos*]        = $(inherited) '@executable_path/
 LD_RUNPATH_SEARCH_PATHS[sdk=appletvsimulator*] = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 
 
-DEVELOPMENT_TEAM = ;
-PROVISIONING_PROFILE_SPECIFIER = ;
-CODE_SIGN_IDENTITY = ;
+FRAMEWORK_SEARCH_PATHS[sdk=macosx*]            = $(inherited) $(SRCROOT)/Carthage/Build/Mac
+FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]          = $(inherited) $(SRCROOT)/Carthage/Build/iOS
+FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]   = $(inherited) $(SRCROOT)/Carthage/Build/iOS
+FRAMEWORK_SEARCH_PATHS[sdk=watchos*]           = $(inherited) $(SRCROOT)/Carthage/Build/watchOS
+FRAMEWORK_SEARCH_PATHS[sdk=watchsimulator*]    = $(inherited) $(SRCROOT)/Carthage/Build/watchOS
+FRAMEWORK_SEARCH_PATHS[sdk=appletvos*]         = $(inherited) $(SRCROOT)/Carthage/Build/tvOS
+FRAMEWORK_SEARCH_PATHS[sdk=appletvsimulator*]  = $(inherited) $(SRCROOT)/Carthage/Build/tvOS
 
+OTHER_LDFLAGS = $(inherited) -framework Beacon

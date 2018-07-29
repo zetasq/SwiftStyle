@@ -16,45 +16,44 @@ import UIKit
 
 #endif
 
+import Beacon
+
 extension Responder {
   
-  private static var styleHandlingObjectKey = "com.zetasq.SwiftStyle.Responder.styleHandlingObjectKey"
-  
-  private var styleHandlingObject: StyleHandlingObject {
-    if let existingObject = objc_getAssociatedObject(self, &Responder.styleHandlingObjectKey) as? StyleHandlingObject {
-      return existingObject
-    } else {
-      let newObject = StyleHandlingObject()
-      objc_setAssociatedObject(self, &Responder.styleHandlingObjectKey, newObject, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-      return newObject
+  public final func registerForStyleChange<T: StyleProtocol>(type: T.Type, handler: @escaping (T) -> Void) {
+    Beacon.default.addListener(self, broadcasterType: StyleBroadcaster<T>.self, broadcastIdentifier: .styleChanged) { [weak self] signal in
+      guard let `self` = self else { return }
+      
+      guard self.isDescendantOrSelf(of: signal.payload.broadcastingResponder) else {
+        return
+      }
+      
+      handler(signal.payload.style)
     }
   }
   
-  public func registerForStyleChange<T: StyleProtocol>(type: T.Type, handler: @escaping StyleChangeHandler<T>) {
-    styleHandlingObject.addStyleChangeHandler(handler)
+  public final func deregisterForStyleChange<T: StyleProtocol>(forType type: T.Type) {
+    Beacon.default.removeListener(self, broadcastingType: StyleBroadcaster<T>.self, identifier: .styleChanged)
   }
   
-  public func removeStyleChange<T: StyleProtocol>(forType type: T.Type) {
-    styleHandlingObject.removeStyleChangeHandler(forType: type)
+  public final func broadcastStyle<T: StyleProtocol>(style: T) {
+    let ghostBroadcaster = GhostStyleBroadcasterPool.shared.styleBroadcaster(forType: T.self)
+    
+    let payload = StyleBroadcaster.BroadcastPayload(style: style, broadcastingResponder: self)
+    
+    ghostBroadcaster.broadcast(identifier: .styleChanged, payload: payload)
   }
   
-  public func styleDidChange<T: StyleProtocol>(_ style: T) {
-    guard let handler = styleHandlingObject.styleChangeHandler(forType: T.self) else {
-      return
+  // MARK: - Helper methods
+  private func isDescendantOrSelf(of target: Responder) -> Bool {
+    
+    var responder = self
+    
+    while responder !== target, let next = responder.next {
+      responder = next
     }
-    handler(style)
-  }
-  
-  public func applyCurrentStyle() {
     
-  }
-  
-  private func applyStyleToSelfAndDescendants() {
-    
-  }
-  
-  private func applyStyle<T: StyleProtocol>(_ style: T) {
-    
+    return responder === target
   }
   
 }
