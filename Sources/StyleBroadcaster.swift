@@ -9,7 +9,7 @@
 import Foundation
 import Beacon
 
-internal final class StyleBroadcaster<T: StyleProtocol>: SignalBroadcasting {
+internal final class StyleBroadcaster<T>: SignalBroadcasting {
   
   internal enum BroadcastIdentifier: String, BroadcastIdentifiable {
     case styleChanged

@@ -14,7 +14,7 @@ internal final class GhostStyleBroadcasterPool {
   
   private var objectMap: [String: AnyObject] = [:]
   
-  internal func styleBroadcaster<T: StyleProtocol>(forType type: T.Type) -> StyleBroadcaster<T> {
+  internal func styleBroadcaster<T>(forType type: T.Type) -> StyleBroadcaster<T> {
     let typeID = String(reflecting: T.self)
     
     if let existingBroadcaster = objectMap[typeID] as? StyleBroadcaster<T> {

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4DC7034210DF1EE00695117 /* StyleProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7030210DF1EE00695117 /* StyleProcotol.swift */; };
 		D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */; };
 		D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7033210DF1EE00695117 /* Responder+Style.swift */; };
 		D4DC705E210E159C00695117 /* StyleBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC705D210E159C00695117 /* StyleBroadcaster.swift */; };
 		D4DC7060210E15B900695117 /* GhostStyleBroadcasterPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */; };
+		D4DC7062210E93EA00695117 /* BroadcastStylesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7061210E93EA00695117 /* BroadcastStylesTable.swift */; };
 		D4E728EE210DEA8F002C3578 /* SwiftStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E728E4210DEA8F002C3578 /* SwiftStyle.framework */; };
 		D4E728F3210DEA8F002C3578 /* SwiftStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E728F2210DEA8F002C3578 /* SwiftStyleTests.swift */; };
 		D4E728F5210DEA8F002C3578 /* SwiftStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = D4E728E7210DEA8F002C3578 /* SwiftStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,11 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D4DC7030210DF1EE00695117 /* StyleProcotol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleProcotol.swift; sourceTree = "<group>"; };
 		D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNeutralTypes.swift; sourceTree = "<group>"; };
 		D4DC7033210DF1EE00695117 /* Responder+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Responder+Style.swift"; sourceTree = "<group>"; };
 		D4DC705D210E159C00695117 /* StyleBroadcaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleBroadcaster.swift; sourceTree = "<group>"; };
 		D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostStyleBroadcasterPool.swift; sourceTree = "<group>"; };
+		D4DC7061210E93EA00695117 /* BroadcastStylesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastStylesTable.swift; sourceTree = "<group>"; };
 		D4E728E4210DEA8F002C3578 /* SwiftStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E728E7210DEA8F002C3578 /* SwiftStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftStyle.h; sourceTree = "<group>"; };
 		D4E728E8210DEA8F002C3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 				D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */,
 				D4DC705D210E159C00695117 /* StyleBroadcaster.swift */,
 				D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */,
+				D4DC7061210E93EA00695117 /* BroadcastStylesTable.swift */,
 				D4DC7033210DF1EE00695117 /* Responder+Style.swift */,
-				D4DC7030210DF1EE00695117 /* StyleProcotol.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DC7062210E93EA00695117 /* BroadcastStylesTable.swift in Sources */,
 				D4DC7060210E15B900695117 /* GhostStyleBroadcasterPool.swift in Sources */,
-				D4DC7034210DF1EE00695117 /* StyleProcotol.swift in Sources */,
 				D4DC705E210E159C00695117 /* StyleBroadcaster.swift in Sources */,
 				D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */,
 				D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */,

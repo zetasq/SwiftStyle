@@ -20,7 +20,19 @@ import Beacon
 
 extension Responder {
   
-  public final func registerForStyleChange<T: StyleProtocol>(type: T.Type, handler: @escaping (T) -> Void) {
+  private static var stylesTableKey = "com.zetasq.SwiftStyle.Responder.stylesTableKey"
+  
+  private final var stylesTable: BroadcastStylesTable {
+    if let existingTable = objc_getAssociatedObject(self, &Responder.stylesTableKey) as? BroadcastStylesTable {
+      return existingTable
+    } else {
+      let newTable = BroadcastStylesTable()
+      objc_setAssociatedObject(self, &Responder.stylesTableKey, newTable, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+      return newTable
+    }
+  }
+  
+  public final func registerForStyleChange<T>(type: T.Type, handler: @escaping (T) -> Void) {
     Beacon.default.addListener(self, broadcasterType: StyleBroadcaster<T>.self, broadcastIdentifier: .styleChanged) { [weak self] signal in
       guard let `self` = self else { return }
       
@@ -32,11 +44,27 @@ extension Responder {
     }
   }
   
-  public final func deregisterForStyleChange<T: StyleProtocol>(forType type: T.Type) {
-    Beacon.default.removeListener(self, broadcastingType: StyleBroadcaster<T>.self, identifier: .styleChanged)
+  /// Call this method in viewWillAppear/didMoveToWindow
+  ///
+  /// - Parameters:
+  ///   - type: The type of the style to apply
+  ///   - handler: callback(noescaping) for available style
+  public final func applyAvailableStyleIfPossible<T>(forType type: T.Type, handler: (T) -> Void) {
+    var responder: Responder? = self
+    
+    while let currentResponder = responder {
+      if let style = currentResponder.stylesTable.style(forType: T.self) {
+        handler(style)
+        break
+      }
+      
+      responder = responder?.next
+    }
   }
   
-  public final func broadcastStyle<T: StyleProtocol>(style: T) {
+  public final func broadcastStyle<T>(style: T) {
+    stylesTable.saveStyle(style)
+    
     let ghostBroadcaster = GhostStyleBroadcasterPool.shared.styleBroadcaster(forType: T.self)
     
     let payload = StyleBroadcaster.BroadcastPayload(style: style, broadcastingResponder: self)
@@ -45,7 +73,7 @@ extension Responder {
   }
   
   // MARK: - Helper methods
-  private func isDescendantOrSelf(of target: Responder) -> Bool {
+  private final func isDescendantOrSelf(of target: Responder) -> Bool {
     
     var responder = self
     
