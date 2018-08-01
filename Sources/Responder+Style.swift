@@ -58,7 +58,7 @@ extension Responder {
         break
       }
       
-      responder = responder?.next
+      responder = responder?.platformAgnosticNextResponder
     }
   }
   
@@ -77,7 +77,7 @@ extension Responder {
     
     var responder = self
     
-    while responder !== target, let next = responder.next {
+    while responder !== target, let next = responder.platformAgnosticNextResponder {
       responder = next
     }
     

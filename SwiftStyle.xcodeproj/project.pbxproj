@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4C150A42111A3A6003ECB74 /* Responder+NeutralMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C150A32111A3A6003ECB74 /* Responder+NeutralMethods.swift */; };
 		D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */; };
 		D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC7033210DF1EE00695117 /* Responder+Style.swift */; };
 		D4DC705E210E159C00695117 /* StyleBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DC705D210E159C00695117 /* StyleBroadcaster.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4C150A32111A3A6003ECB74 /* Responder+NeutralMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Responder+NeutralMethods.swift"; sourceTree = "<group>"; };
 		D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNeutralTypes.swift; sourceTree = "<group>"; };
 		D4DC7033210DF1EE00695117 /* Responder+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Responder+Style.swift"; sourceTree = "<group>"; };
 		D4DC705D210E159C00695117 /* StyleBroadcaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleBroadcaster.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				D4E728E8210DEA8F002C3578 /* Info.plist */,
 				D4E728E7210DEA8F002C3578 /* SwiftStyle.h */,
 				D4DC7032210DF1EE00695117 /* PlatformNeutralTypes.swift */,
+				D4C150A32111A3A6003ECB74 /* Responder+NeutralMethods.swift */,
 				D4DC705D210E159C00695117 /* StyleBroadcaster.swift */,
 				D4DC705F210E15B900695117 /* GhostStyleBroadcasterPool.swift */,
 				D4DC7061210E93EA00695117 /* BroadcastStylesTable.swift */,
@@ -229,6 +232,7 @@
 				D4DC7062210E93EA00695117 /* BroadcastStylesTable.swift in Sources */,
 				D4DC7060210E15B900695117 /* GhostStyleBroadcasterPool.swift in Sources */,
 				D4DC705E210E159C00695117 /* StyleBroadcaster.swift in Sources */,
+				D4C150A42111A3A6003ECB74 /* Responder+NeutralMethods.swift in Sources */,
 				D4DC7037210DF1EE00695117 /* Responder+Style.swift in Sources */,
 				D4DC7036210DF1EE00695117 /* PlatformNeutralTypes.swift in Sources */,
 			);
